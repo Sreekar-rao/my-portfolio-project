@@ -88,3 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
 });
+
+
+// ====== Scroll Reveal Animation ======
+const reveals = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((section) => {
+    const top = section.getBoundingClientRect().top;
+    const winHeight = window.innerHeight;
+    if (top < winHeight - 100) {
+      section.classList.add("active");
+    }
+  });
+});
